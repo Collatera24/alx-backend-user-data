@@ -52,8 +52,8 @@ class BasicAuth(Auth):
         if type(decoded_base64_authorization_header) == str:
             pattern = r'(?P<user>[^:]+):(?P<password>.+)'
             field_match = re.fullmatch(
-                    pattern,
-                    decoded_base64_authorization_header.strip(),
+                pattern,
+                decoded_base64_authorization_header.strip(),
             )
             if field_match is not None:
                 user = field_match.group('user')
